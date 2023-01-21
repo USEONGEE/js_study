@@ -1,0 +1,6 @@
+div, p {
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    display: inline;
+} /* display 속성을 inline으로 바꿔주면 div, p 태그가 위에서 아래로 쌓이지 않고 왼쪽에서 오른쪽으로 쌓인다.*/
