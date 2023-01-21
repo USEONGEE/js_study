@@ -69,22 +69,37 @@
 
 
 
-// 정적 변수와 메소드
-class YalcoChicken {
-    static brand = '얄코치킨';
-    static contanct() { // static method 이므로 메소드 내부에서 사용하는 모든 변수또한 static variable이어야 한다.
-        return `${this.brand}입니다. 무엇을 도와드릴까요..?`
-    }
+// // 정적 변수와 메소드
+// class YalcoChicken {
+//     static brand = '얄코치킨';
+//     static contanct() { // static method 이므로 메소드 내부에서 사용하는 모든 변수또한 static variable이어야 한다.
+//         return `${this.brand}입니다. 무엇을 도와드릴까요..?`
+//     }
 
-    constructor(name,no) {
-        this.name = name;
-        this.no = no;
-    }
+//     constructor(name,no) {
+//         this.name = name;
+//         this.no = no;
+//     }
 
-    introduce(){
-        return `안녕하세요, ${this.no}호 ${this.name}점 입니다.`
+//     introduce(){
+//         return `안녕하세요, ${this.no}호 ${this.name}점 입니다.`
+//     }
+// }
+// console.log(YalcoChicken);
+// console.log(YalcoChicken.contanct());
+// console.log(typeof YalcoChicken); // 클래스도 함수에 속한다.
+
+
+
+
+// 클래스도 함수이다.
+class Dog {
+    bark() {
+        return '멍멍';
     }
 }
-console.log(YalcoChicken);
-console.log(YalcoChicken.contanct());
-console.log(typeof YalcoChicken); // 클래스도 함수에 속한다. 
+console.log(typeof Dog);
+
+const 개 = Dog;
+const 바둑이 = new 개();
+console.log(바둑이);
