@@ -33,7 +33,7 @@ function YalcoChicken(name, no) {
     this.name = name; // 여기서의 this는 constructor로 생성될 객체, instance를 의미한다.
     this.no = no;
     this.introduce = function () {
-        reurtn`안녕하세요, ${this.no}호 ${this.name}점 입니다!`;
+        return`안녕하세요, ${this.no}호 ${this.name}점 입니다!`;
     }
     // this.introduce = () => `안녕하세요, ${this.no}호 ${this.name}점 입니다!`; 
     // // 원래는 화살표 함수에서의 this는 상위 단계의 
@@ -55,6 +55,4 @@ YalcoChicken.contact = function () {
 console.log(`${YalcoChicken.brand},
 ${YalcoChicken.contact()}`);
 console.log(y1.contact()); // 객체 y1에서는 contact()를 이용할 수 없다.... 시발 존나 어렵네 ㅜㅜ
-
-
 
