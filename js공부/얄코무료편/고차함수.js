@@ -235,7 +235,6 @@
 // );
 // console.log(randomWord);
 
-// // 예시 3, 숫자를 문자열로 암묵적 변환함 - 오류
-// const arr = [1, 2, 30, 400, 10, 100, 1000];
-// console.log(arr.sort());
-
+// 예시 3, 숫자를 문자열로 암묵적 변환함 - 오류
+const arr = [1, 2, 30, 400, 10, 100, 1000];
+console.log(arr.sort());
