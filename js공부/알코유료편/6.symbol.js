@@ -104,9 +104,9 @@ const symbol1 = Symbol.for('key');
 const symbol2 = Symbol.for('key');
 console.log(
     Symbol.keyFor(symbol1),
-    Symbol.keyFor(symbol2) 
-) 
+    Symbol.keyFor(symbol2)
+)
 const symbol3 = Symbol('key');
 console.log(
-    Symbol.keyFor(symbol3)
+    Symbol.keyFor(symbol3) // Symbol.for()로 생성하지 않은 객체에 대해서는 사용이 불가능하다.
 );
