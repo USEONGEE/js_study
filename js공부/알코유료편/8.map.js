@@ -108,9 +108,3 @@ const [a, b, ...rest] = map;
 console.log(a);
 console.log(b);
 console.log(rest);
-map.forEach(console.log);
-
-// 아래의 결과와 같음
-// map.forEach((item, idx, set) => {
-//   console.log(item, idx, set)
-// });
