@@ -9,3 +9,7 @@ h1 {
 .active {
     color: tomato;
 }
+
+.sexy-font {
+    font-family: 'Courier New', Courier, monospace;
+}
