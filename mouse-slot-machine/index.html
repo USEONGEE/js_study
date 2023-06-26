@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>쥐 키우기 게임</title>
-  <link rel="stylesheet" href="./src/css/reset.css">
   <link rel="stylesheet" href="./src/css/style.css">
 </head>
 
@@ -22,8 +21,7 @@
         <span>
           소지금
         </span>
-        <span>
-          50,000원
+        <span id="money">
         </span>
       </div>
     </section>
@@ -31,17 +29,37 @@
     <h1 class="ir">쥐 게임하는 곳</h1>
     <section class="play-section">
       <img src="" alt="쥐사진" class="game-img">
+      <img src="" class="status-img">
       <div class="game_control-div">
+        <div class="game_level-div">
+          <span>
+            level
+          </span>
+          <span id="level">
+            1
+          </span>
+        </div>
         <div class="game_probability-div ">
           <span>
             강화 확률
           </span>
-          <span>
-            0%
+          <span id="enforce_prob">
+          </span>
+        </div>
+        <div class="game_probability-div ">
+          <span >
+            강화 비용
+          </span>
+          <span id="enforce_cost">
           </span>
         </div>
         <div class="game_button-div">
-
+          <button class="enforce-button">
+            강화하기
+          </button>
+          <button class="pray-button"> 
+            기도하기
+          </button>
         </div>
       </div>
     </section>
@@ -49,9 +67,6 @@
     <h1 class="ir">쥐 종류</h1>
     <section class="mouse_type-section">
       <div class="mouse_type-div">
-        <ul>
-
-        </ul>
       </div>
       <div class="curr_mouse_type-div">
         <img src="" alt="선택된 쥐 사진" class="mouse_info">
@@ -64,6 +79,8 @@
 
 
   <script src="src/index.js"></script>
+  <script src="src/js/getImages.js"></script>
+  <script src="src/js/game.js"></script>
 </body>
 
 </html>

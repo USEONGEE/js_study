@@ -18,11 +18,6 @@ body {
   overflow: hidden;
 }
 
-img {
-  width: 20px;
-  height: 30px;
-}
-
 .logo {
   display: block;
   margin: 2rem auto;
@@ -47,7 +42,7 @@ img {
 .money-machine {
   background-color: #D8D8D8;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: auto;
   width: 80%;
@@ -63,42 +58,51 @@ img {
   border-radius: 10px;
   height: 15rem;
   display: flex;
+  position: relative;
 }
 
 .game-img {
   flex: 2;
   margin: 1rem;
-  height:80%;
+  height: 80%;
   width: 80%;
 }
 
-.game_control-div{
-  flex:1;
+.status-img {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  left: 20rem;
+  top: 2rem;
+}
+
+.game_control-div {
+  flex: 1;
   margin: 1rem;
-  height:80%;
+  height: 80%;
   width: 80%;
   display: flex;
   flex-direction: column;
 
 }
 
-.game_probability-div{
+.game_probability-div,
+.game_level-div {
   background-color: #D8D8D8;
   border-radius: 10px;
-  height:100%;
+  height: 100%;
   width: 100%;
-  padding:0.2rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
   font-weight: bold;
-  flex:1;
-  display:flex;
+  flex: 1;
+  display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   box-sizing: border-box;
 }
 
-.game_button-div{
-  flex:2
-}
+
 
 .mouse_type-section {
   width: 100%;
@@ -114,9 +118,37 @@ img {
   background-color: #D8D8D8;
   border-radius: 10px;
   width: 30rem;
-  height: 15rem;
+  height: 25rem;
   margin: 1rem;
   flex: 2;
+}
+
+.mouse_type-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.mouse_img-container {
+  background-color: white;
+  border-radius: 10px;
+  width: 30%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mouse-img {
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.mouse-img:hover {
+  transform: scale(1.1);
 }
 
 .curr_mouse_type-div {
@@ -132,4 +164,28 @@ img {
   margin: 0.5rem auto;
   height: 80%;
   width: 80%;
+}
+
+.game_button-div {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.enforce-button {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.pray-button {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.enfore-button .pray-button:active {
+  box-shadow: 10px 10px 0 rgb(0,0,0,1);
+  position: relative;
+  top:10px;
 }
