@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, { useState, useMemo } from "react";
 import PropTypes from 'prop-types'; // prop의 타입을 검사해주는 패키지
 import Link from 'next/link';
 import { Menu, Input, Row, Col } from 'antd';
+import styled from 'styled-components'
 
 import UserProfile from '../components/UserProfile';
 import LoginForm from '../components/LoginForm';
@@ -13,7 +14,7 @@ import LoginForm from '../components/LoginForm';
 
 const AppLayout = ({ children }) => {
   const [isLoggedIn, setsLoggedIn] = useState(false);
-  
+
 
   return (
     <div>
@@ -25,7 +26,7 @@ const AppLayout = ({ children }) => {
           <Link href='/profile'><a>프로필</a></Link>
         </Menu.Item>
         <Menu.Item>
-          <Input.Search enterButton style={{ verticalAlign: "middle" }} />
+          <SearchInput enterButton />
         </Menu.Item>
         <Menu.Item>
           <Link href='/signup'><a>회원가입</a></Link>
@@ -33,7 +34,7 @@ const AppLayout = ({ children }) => {
       </Menu>
       <Row gutter={4}>
         <Col xs={24} md={6}>
-          {isLoggedIn ? <UserProfile /> : <LoginForm />}
+          {isLoggedIn ? <UserProfile setsLoggedIn={setsLoggedIn} /> : <LoginForm setsLoggedIn={setsLoggedIn} />}
         </Col>
         <Col xs={24} md={12}>
           {children}
@@ -45,6 +46,18 @@ const AppLayout = ({ children }) => {
     </div>
   )
 }
+
+/**
+ * 컴포넌트에  inline으로 스타일을 작성하게 되면 {} !== {} 이므로 바뀐게 없는데 Virtual DOM에서 바뀐 것이라고 착각해 리렌더링을 하게 된다.
+ * 해결책
+ * 1. styled-component 이용하기
+ * 2. useMemo 이용하기 
+ * */
+
+
+const SearchInput = styled(Input.Search)`
+  vertical-align: middle;
+`;
 
 AppLayout.PropTypes = {
   children: PropTypes.node.isRequired, // node는 React에서 화면에 그리는 모든 것들을 node라고 부른다.
