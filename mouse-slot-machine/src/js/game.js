@@ -37,6 +37,14 @@ const stageUp = () => {
   $character.src = `./src/img/${stage}.jpg`;
 }
 
+const init = () => {
+  money += Math.round(Math.random() * 50000);
+}
+
+
+// main
+
+init();
 setting();
 
 $enforce.addEventListener('click', () => {
