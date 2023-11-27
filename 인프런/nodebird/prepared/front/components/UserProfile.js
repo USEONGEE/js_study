@@ -1,8 +1,11 @@
 import { Card, Avatar, Button } from 'antd';
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { logoutAction } from '../reducers/user';
 
 // jsx에서 배열로 jsx를 쓸 때는 key를 붙혀주어야한다.
-const UserProfile = ({ setsLoggedIn }) => {
+const UserProfile = () => {
+  const dispatch = useDispatch();
   return (
     <Card
       actions={[
@@ -15,7 +18,7 @@ const UserProfile = ({ setsLoggedIn }) => {
         title="NOH"
         avatar={<Avatar>NONO</Avatar>}
       />
-      <Button onClick={() => setsLoggedIn(false)}>로그아웃</Button>
+      <Button onClick={() => dispatch(logoutAction())}>로그아웃</Button>
 
     </Card>
   )

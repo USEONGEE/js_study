@@ -6,6 +6,7 @@ import styled from 'styled-components'
 
 import UserProfile from '../components/UserProfile';
 import LoginForm from '../components/LoginForm';
+import { useSelector } from "react-redux";
 
 
 // 직접 antd에 가서 찾아서 쓰는 것이다. Input.Sear초 태그를 추가하니 정렬이 안 맞는데, 이런 부분은 실제 CSS를 덮어씌워서 해결할 수도 있다.
@@ -13,8 +14,7 @@ import LoginForm from '../components/LoginForm';
 // _blank로 새로운 페이지를 열어야할 때는 rel 태그를 이용해서 보안위협을 줄인다.
 
 const AppLayout = ({ children }) => {
-  const [isLoggedIn, setsLoggedIn] = useState(false);
-
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn); // 나중에 state가 변경된다고 하더라도 isLoggedIn의 참조는 바뀌지 않는다.
 
   return (
     <div>
@@ -34,7 +34,7 @@ const AppLayout = ({ children }) => {
       </Menu>
       <Row gutter={4}>
         <Col xs={24} md={6}>
-          {isLoggedIn ? <UserProfile setsLoggedIn={setsLoggedIn} /> : <LoginForm setsLoggedIn={setsLoggedIn} />}
+          {isLoggedIn ? <UserProfile /> : <LoginForm />}
         </Col>
         <Col xs={24} md={12}>
           {children}

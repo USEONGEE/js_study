@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import Head from 'next/head';
+import wrapper from "../store/configureStore";
 
 /**
  * 모든 페이지의 공통인 부분을 처리한다.
@@ -21,5 +22,5 @@ App.PropTypes = {
   Component: PropTypes.elementType.isRequired
 }
 
-export default App;
+export default wrapper.withRedux(App);
 

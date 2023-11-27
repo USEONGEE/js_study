@@ -3,11 +3,14 @@ import { Button, Form, Input } from 'antd';
 import Link from 'next/link'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { useDispatch } from 'react-redux';
+import { loginAction } from '../reducers/user';
 
 // a태그에는 링크를 안 넣고 next의 Link를 이용하는 것이 좋다. 
 // 컴포넌트의 props로 넘겨주는 함수는 useCallBack을 사용해야 한다. => 메모지에이션 => 함수의 의존성이 변경되지 않으면 함수를 다시 생성해서 불필요한 렌더링을 막을 수 있다.
 
-const LoginForm = ({ setsLoggedIn }) => {
+const LoginForm = () => {
+  const dispatch = useDispatch();
   const [id, setid] = useState('')
   const [password, setpassword] = useState('')
 
@@ -30,7 +33,7 @@ const LoginForm = ({ setsLoggedIn }) => {
   //antd에서 onFinish는 e.preventDefault()가 적용되어 있다.
   const onSubmitForm = useCallback(
     () => {
-      setsLoggedIn(true)
+      dispatch(loginAction({id, password}));
     },
     [id, password],
   )
@@ -73,10 +76,5 @@ const FormWrapper = styled(Form)`
 const ButtonWrapper = styled.div`
   margin-top: 10px;
 `
-
-LoginForm.PropTypes = {
-  setsLoggedIn: PropTypes.func.isRequired,
-};
-
 
 export default LoginForm;
